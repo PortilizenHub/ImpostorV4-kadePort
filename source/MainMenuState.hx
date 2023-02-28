@@ -76,7 +76,7 @@ class MainMenuState extends MusicBeatState
 				bg.antialiasing = true;
 			}
 		add(bg);
-
+ 
 		starFG = new FlxBackdrop(Paths.image('menuBooba/starFG', 'impostor'), XY, 1, 0);
 		starFG.updateHitbox();
 		starFG.antialiasing = true;
