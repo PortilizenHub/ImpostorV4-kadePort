@@ -1292,7 +1292,7 @@ class PlayState extends MusicBeatState
 							farClouds.add(newCloud);								
 						}
 
-						speedLines = new FlxBackdrop(Paths.image('ejected/speedLines', 'impostor'), 1, 1, true, true);
+						speedLines = new FlxBackdrop(Paths.image('ejected/speedLines', 'impostor'), XY, 1, 0);
 						speedLines.antialiasing = true;
 						speedLines.updateHitbox();
 						speedLines.scrollFactor.set(1.3, 1.3);
@@ -4310,7 +4310,7 @@ class PlayState extends MusicBeatState
 
 					if (SONG.validScore)
 					{
-						NGio.unlockMedal(60961);
+						// NGio.unlockMedal(60961);
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 
