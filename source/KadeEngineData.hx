@@ -112,6 +112,9 @@ class KadeEngineData
 		if (FlxG.save.data.editor == null)
 			FlxG.save.data.editor = true;
 
+		if (FlxG.save.data.version == null)
+			FlxG.save.data.version = "v4";
+
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		
 		KeyBinds.gamepad = gamepad != null;

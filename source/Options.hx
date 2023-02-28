@@ -186,6 +186,36 @@ class DownscrollOption extends Option
 	}
 }
 
+class Version extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		if (FlxG.save.data.version == "version three")
+			FlxG.save.data.version == "version four";
+		if (FlxG.save.data.version == "version four")
+			FlxG.save.data.version == "version three";
+
+		if (FlxG.save.data.version == "v3")
+			FlxG.save.data.version == "version three";
+		if (FlxG.save.data.version == "v4")
+			FlxG.save.data.version == "version four";
+		
+		display = updateDisplay();
+		return true;
+	}
+
+    private override function updateDisplay():String
+	{
+		return FlxG.save.data.version;
+	}
+}
+
 class GhostTapOption extends Option
 {
 	public function new(desc:String)

@@ -39,10 +39,10 @@ class OptionsMenu extends MusicBeatState
 			new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
-			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!")
 		]),
 		new OptionCategory("Appearance", [
+			new Version("Deja Vu all over again."),
 			new EditorRes("Not showing the editor grid will greatly increase editor performance"),
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new CamZoomOption("Toggle the camera zoom in-game."),
@@ -51,7 +51,7 @@ class OptionsMenu extends MusicBeatState
 			new SongPositionOption("Show the song's current position as a scrolling bar."),
 			new NPSDisplayOption("Shows your current Notes Per Second on the info bar."),
 			new RainbowFPSOption("Make the FPS Counter flicker through rainbow colors."),
-			new CpuStrums("Toggle the CPU's strumline lighting up when it hits a note."),
+			new CpuStrums("Toggle the CPU's strumline lighting up when it hits a note.")
 		]),
 		
 		new OptionCategory("Misc", [

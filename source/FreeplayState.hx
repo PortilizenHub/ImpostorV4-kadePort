@@ -117,8 +117,11 @@ class FreeplayState extends MusicBeatState
 
 			if (diffsThatExist.length == 0)
 			{
-				Application.current.window.alert("No difficulties found for chart, skipping.",meta.songName + " Chart");
-				continue;
+				// DO NOT CRASH THE GAME
+				// Application.current.window.alert("No difficulties found for chart, skipping.",meta.songName + " Chart");
+				// continue;
+
+				trace(format);
 			}
 			#else
 			diffsThatExist = ["Easy","Normal","Hard"];
