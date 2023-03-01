@@ -28,6 +28,10 @@ class Main extends Sprite
 
 	public static var watermarks = true; // Whether to put Kade Engine literally anywhere
 
+	var game:FlxGame;
+
+	var fpsCounter:FPS;
+
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function main():Void
@@ -121,10 +125,6 @@ class Main extends Sprite
 		toggleFPS(FlxG.save.data.fps);
 		#end
 	}
-
-	var game:FlxGame;
-
-	var fpsCounter:FPS;
 
 	public function toggleFPS(fpsEnabled:Bool):Void {
 		fpsCounter.visible = fpsEnabled;
