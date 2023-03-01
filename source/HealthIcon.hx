@@ -41,7 +41,7 @@ class HealthIcon extends FlxSprite
 			case 'bf-sus':
 				this.char = 'bf-pixel';
 
-			case 'bf-fall' | 'bfg' | 'bfr' | 'ziffy':
+			case 'bf-fall' | 'bfg' | 'bfr' | 'ziffy' | 'bf_defeat':
 				this.char = 'bf';
 
 			case 'crewmate':

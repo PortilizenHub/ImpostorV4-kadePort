@@ -102,9 +102,9 @@ class StoryMenuState extends MusicBeatState
 	
 	function amongTimer()
 	{
-		new FlxTimer().start(FlxG.random.int(1, 3), function(tmr:FlxTimer)
+		new FlxTimer().start(8, function(tmr:FlxTimer)
 		{
-			var tex = Paths.getSparrowAtlas('amongRun'+FlxG.random.int(1, 2));
+			var tex = Paths.getSparrowAtlas('amongRun');
 
 			var walking:FlxSprite = new FlxSprite();
 			walking.setGraphicSize(Std.int(walking.width * 0.2));
@@ -158,7 +158,9 @@ class StoryMenuState extends MusicBeatState
 		bg.screenCenter();
 		add(bg);
 
+		#if debug
 		amongTimer();
+		#end
 
 		polusGround = new FlxSprite(-406.63, 1169.29).loadGraphic(Paths.image('polusGround'));
 		polusHills = new FlxSprite(-866.63, 873.62).loadGraphic(Paths.image('polusHills'));
@@ -424,10 +426,8 @@ class StoryMenuState extends MusicBeatState
 			}
 		}
 
-		if (controls.BACK && !movedBack && !selectedWeek)
+		if (controls.BACK && !selectedWeek)
 		{
-			FlxG.sound.play(Paths.sound('cancelMenu'));
-			movedBack = true;
 			FlxG.switchState(new MainMenuState());
 		}
 

@@ -285,6 +285,24 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+			case 'bf_defeat':
+				var tex = Paths.getSparrowAtlas('BF_defeat_Normal', 'shared',true);
+				frames = tex;
+
+				trace(tex.frames.length);
+
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singUPmiss', 'miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'miss', 24, false);
+
+				loadOffsetFile("BF_Defeat_Normal");
 			
 			case 'bfclow':
 				var tex = Paths.getSparrowAtlas('clowofe','shared',true);

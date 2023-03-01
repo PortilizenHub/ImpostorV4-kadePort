@@ -1481,6 +1481,8 @@ class PlayState extends MusicBeatState
 				gf.x -= 100;
 			case 'defeat':
 				gf.y -= 2000;
+				boyfriend.setPosition(1000, 100);
+				dad.setPosition(210, 100);
 
 			case 'mallEvil':
 				boyfriend.x += 320;
@@ -5594,10 +5596,6 @@ class PlayState extends MusicBeatState
 		if (curBeat == 260 && curSong == 'Rivals')
 		{
 			boyfriend.playAnim('shoot', true);
-		}
-
-		if (curBeat == 260 && curSong == 'Rivals')
-		{
 			dad.playAnim('die', true);
 		}
 
@@ -5652,7 +5650,7 @@ class PlayState extends MusicBeatState
 
 		if (curBeat == 607 && curSong == 'Reactor')
     {
-			defaultCamZoom = 0.7;
+			defaultCamZoom = 0.6;
 			camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y + 100);
     }
 

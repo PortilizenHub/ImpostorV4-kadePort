@@ -176,7 +176,7 @@ class MainMenuState extends MusicBeatState
 		build.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		build.scrollFactor.set();
 		build.updateHitbox();
-		add(build);
+		// add(build);
 
 		// NG.core.calls.event.logEvent('swag').send();
 
