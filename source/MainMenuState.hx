@@ -58,6 +58,12 @@ class MainMenuState extends MusicBeatState
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
+
+		var app = new openfl.display.Application();
+
+
+		// trace("Build Num ("+app.meta["build"]+")");
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -69,8 +75,6 @@ class MainMenuState extends MusicBeatState
 		}
 
 		persistentUpdate = persistentDraw = true;
-
-		FlxG.mouse.visible = true;
 
 		var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		bg.scrollFactor.set();
@@ -134,12 +138,13 @@ class MainMenuState extends MusicBeatState
 			testButton.antialiasing = true;
 			testButton.updateHitbox();
 			testButton.screenCenter(X);
-			testButton.scrollFactor.set();
 			switch(i) {
 				case 0:
 					testButton.setPosition(367.35, 389.9);
 				case 1:
 					testButton.setPosition(665.5, 389.9);
+				case 2:
+					testButton.setPosition(480.46, 523.3);
 				case 3:
 					testButton.setPosition(665.5, 523.3);
 			}
@@ -167,6 +172,12 @@ class MainMenuState extends MusicBeatState
 		versionShit.screenCenter(X);
 		add(versionShit);
 
+		var build:FlxText = new FlxText(0, 20, "Build Num ("+app.meta["build"]+")");
+		build.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		build.scrollFactor.set();
+		build.updateHitbox();
+		add(build);
+
 		// NG.core.calls.event.logEvent('swag').send();
 
 
@@ -187,6 +198,9 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+		FlxG.mouse.visible = true;
+
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;

@@ -80,7 +80,11 @@ class TitleState extends MusicBeatState
 
 		KadeEngineData.initSave();
 
-				
+		var app = new openfl.display.Application();
+
+
+		trace("Build Num ("+app.meta["build"]+")");
+
 		Highscore.load();
 
 

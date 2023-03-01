@@ -158,8 +158,7 @@ class StoryMenuState extends MusicBeatState
 		bg.screenCenter();
 		add(bg);
 
-		
-		
+		amongTimer();
 
 		polusGround = new FlxSprite(-406.63, 1169.29).loadGraphic(Paths.image('polusGround'));
 		polusHills = new FlxSprite(-866.63, 873.62).loadGraphic(Paths.image('polusHills'));
@@ -169,23 +168,23 @@ class StoryMenuState extends MusicBeatState
 		polusHills.setGraphicSize(Std.int(polusHills.width * 0.7));
 		polusRocks.setGraphicSize(Std.int(polusRocks.width * 0.7));
 		polusWarehouse.setGraphicSize(Std.int(polusWarehouse.width * 0.7));
-		add(polusRocks);
-		add(polusHills);
-		add(polusWarehouse);
-		add(polusGround);
+		//add(polusRocks);
+		//add(polusHills);
+		//add(polusWarehouse);
+		//add(polusGround);
 
 		baller = new FlxSprite(-505, 100).loadGraphic(Paths.image('reactorball'));
 		baller.setGraphicSize(Std.int(baller.width * 0.3));
-		add(baller);
+		//add(baller);
 
 		reactor = new FlxSprite(-2300, -400).loadGraphic(Paths.image('reactorroom'));
 		reactor.setGraphicSize(Std.int(reactor.width * 0.3));
-		add(reactor);
+		//add(reactor);
 
 		bgSky = new FlxSprite(-500, 270).loadGraphic(Paths.image('tomong'));
 		bgSky.scrollFactor.set(0.1, 0.1);
 		bgSky.screenCenter();
-		add(bgSky);
+		//add(bgSky);
 		bgSky.setGraphicSize(Std.int(bgSky.width * 5));
 		bgSky.alpha = 0;
 
@@ -239,8 +238,6 @@ class StoryMenuState extends MusicBeatState
 		add(grpLocks);
 
 		grpWeekCharacters = new FlxTypedGroup<MenuCharacter>();
-
-		trace("Line 70");
 
 		for (i in 0...weekData().length)
 		{
@@ -462,7 +459,7 @@ class StoryMenuState extends MusicBeatState
 					case 2:
 						grpWeekText.members[curWeek].startFlashing(0xFF4B6858);
 					case 3:
-						grpWeekText.members[curWeek].startFlashing(0xFF8C0800);
+						grpWeekText.members[curWeek].startFlashing(0xFF130201);
 				}
 				
 				grpWeekCharacters.members[1].animation.play('bfConfirm');
@@ -497,7 +494,7 @@ class StoryMenuState extends MusicBeatState
 					LoadingState.loadAndSwitchState(new VideoState('assets/videos/moogus/video.webm',new PlayState()));
 				});
 			}
-
+			
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				LoadingState.loadAndSwitchState(new PlayState(), true);
