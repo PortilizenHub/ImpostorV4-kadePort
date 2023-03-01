@@ -16,6 +16,8 @@ class WebmHandler
 	
 	public function new()
 	{
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
 	}
 	
 	public function source(?vPath:String):Void

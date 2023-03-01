@@ -335,6 +335,9 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+
 		FlxG.mouse.visible = false;
 		instance = this;
 
@@ -363,6 +366,7 @@ class PlayState extends MusicBeatState
 		PlayStateChangeables.scrollSpeed = FlxG.save.data.scrollSpeed;
 		PlayStateChangeables.botPlay = FlxG.save.data.botplay;
 		PlayStateChangeables.Optimize = FlxG.save.data.optimize;
+		PlayStateChangeables.v3 = FlxG.save.data.version = "version three";
 
 		// pre lowercasing the song name (create)
 		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
@@ -504,31 +508,12 @@ class PlayState extends MusicBeatState
 		trace('INFORMATION ABOUT WHAT U PLAYIN WIT:\nFRAMES: ' + PlayStateChangeables.safeFrames + '\nZONE: ' + Conductor.safeZoneOffset + '\nTS: '
 			+ Conductor.timeScale + '\nBotPlay : ' + PlayStateChangeables.botPlay);
 
-		var nnSuffix:String = "";
-		if(!naughtyToday)
-			nnSuffix = '-nn';
+		var nnSuffix:String = "-v4";
+		if(PlayStateChangeables.v3 == true)
+			nnSuffix = '-v3';
 		// dialogue shit
 		switch (songLowercase)
 		{
-			case 'tutorial':
-				dialogue = ["Hey you're pretty cute.", 'Use the arrow keys to keep up \nwith me singing.'];
-			case 'bopeebo':
-				dialogue = [
-					'HEY!',
-					"You think you can just sing\nwith my daughter like that?",
-					"If you want to date her...",
-					"You're going to have to go \nthrough ME first!"
-				];
-			case 'fresh':
-				dialogue = ["Not too shabby boy.", ""];
-			case 'dadbattle':
-				dialogue = [
-					"gah you think you're hot stuff?",
-					"If you can beat me here...",
-					"Only then I will even CONSIDER letting you\ndate my daughter!"
-				];
-			case 'senpai':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('data/senpai/senpaiDialogue'));
 			case 'sussus-moogus':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('data/sussus-moogus/moogus' + nnSuffix));
 			case 'sabotage':
@@ -540,11 +525,7 @@ class PlayState extends MusicBeatState
 			case 'lights-down':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('data/lights-down/down' + nnSuffix));
 			case 'reactor':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('data/reactor/reactor'));
-			case 'roses':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('data/roses/rosesDialogue'));
-			case 'thorns':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('data/thorns/thornsDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/reactor/reactor' + nnSuffix));
 		}
 
 		// defaults if no stage was found in chart

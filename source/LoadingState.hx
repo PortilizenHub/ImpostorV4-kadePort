@@ -29,6 +29,10 @@ class LoadingState extends MusicBeatState
 	
 	function new(target:FlxState, stopMusic:Bool)
 	{
+
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+		
 		super();
 		this.target = target;
 		this.stopMusic = stopMusic;

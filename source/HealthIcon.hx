@@ -36,18 +36,36 @@ class HealthIcon extends FlxSprite
 			}
 		}
 
-		changeIcon(char);
+		switch(char)
+		{
+			case 'bf-sus':
+				this.char = 'bf-pixel';
+
+			case 'bf-fall' | 'bfg' | 'bfr' | 'ziffy':
+				this.char = 'bf';
+
+			case 'crewmate':
+				this.char = 'green_crewmate';
+
+			case 'impostor3' | 'impostorr':
+				this.char = 'green_impostor';
+
+			case 'gf':
+				this.char = 'bf-pixel';
+		}
+
+		changeIcon(this.char);
 		scrollFactor.set();
 	}
 
 	public function swapOldIcon()
 	{
-		(isOldIcon = !isOldIcon) ? changeIcon("bf-old") : changeIcon(char);
+		trace('no');
 	}
 
 	public function changeIcon(char:String)
 	{
-		if (char != 'bf-pixel' && char != 'bf-old' && char != 'bf-sus')
+		if (char != 'bf-pixel')
 			char = char.split("-")[0];
 
 

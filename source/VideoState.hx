@@ -35,6 +35,10 @@ class VideoState extends MusicBeatState
 
 	public function new(source:String, toTrans:FlxState, frameSkipLimit:Int = -1, autopause:Bool = false)
 	{
+
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+		
 		super();
 		
 		autoPause = autopause;

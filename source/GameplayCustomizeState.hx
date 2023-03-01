@@ -41,6 +41,11 @@ class GameplayCustomizeState extends MusicBeatState
     private var camHUD:FlxCamera;
     
     public override function create() {
+
+
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+        
         #if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Customizing Gameplay Modules", null);

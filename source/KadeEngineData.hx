@@ -113,7 +113,7 @@ class KadeEngineData
 			FlxG.save.data.editor = true;
 
 		if (FlxG.save.data.version == null)
-			FlxG.save.data.version = "v4";
+			FlxG.save.data.version = "version four";
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		
@@ -126,5 +126,7 @@ class KadeEngineData
 		Main.watermarks = FlxG.save.data.watermark;
 
 		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+
+		FlxG.save.data.flush();
 	}
 }

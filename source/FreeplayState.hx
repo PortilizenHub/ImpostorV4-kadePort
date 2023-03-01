@@ -86,6 +86,10 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('data/freeplaySonglist'));
 
 		//var diffList = "";

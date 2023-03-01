@@ -102,9 +102,9 @@ class StoryMenuState extends MusicBeatState
 	
 	function amongTimer()
 	{
-		new FlxTimer().start(FlxG.random.int(3, 7), function(tmr:FlxTimer)
+		new FlxTimer().start(FlxG.random.int(1, 3), function(tmr:FlxTimer)
 		{
-			var tex = Paths.getSparrowAtlas('amongRun');
+			var tex = Paths.getSparrowAtlas('amongRun'+FlxG.random.int(1, 2));
 
 			var walking:FlxSprite = new FlxSprite();
 			walking.setGraphicSize(Std.int(walking.width * 0.2));
@@ -126,7 +126,8 @@ class StoryMenuState extends MusicBeatState
 	override function create()
 	{
 
-		
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
 
 		weekUnlocked = unlockWeeks();
 

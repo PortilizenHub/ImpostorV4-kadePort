@@ -20,6 +20,10 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	public function new(x:Float, y:Float)
 	{
+
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+		
 		var daStage = PlayState.curStage;
 		var daBf:String = '';
 		switch (PlayState.SONG.player1)

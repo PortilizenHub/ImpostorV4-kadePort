@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="amongRun1.png">
+<SubTexture name="amongRun1 Idle0000" x="177" y="0" width="83" height="103" frameX="-26" frameY="-11" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0000" x="0" y="0" width="96" height="110" frameX="-28" frameY="-4" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0001" x="0" y="0" width="96" height="110" frameX="-28" frameY="-4" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0002" x="96" y="0" width="81" height="110" frameX="-32" frameY="-4" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0003" x="96" y="0" width="81" height="110" frameX="-32" frameY="-4" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0004" x="0" y="110" width="96" height="101" frameX="-29" frameY="-9" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0005" x="0" y="110" width="96" height="101" frameX="-29" frameY="-9" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0006" x="96" y="0" width="81" height="110" frameX="-32" frameY="-4" frameWidth="125" frameHeight="125" />
+<SubTexture name="amongRun1 Walk0007" x="96" y="0" width="81" height="110" frameX="-32" frameY="-4" frameWidth="125" frameHeight="125" />
+</TextureAtlas>

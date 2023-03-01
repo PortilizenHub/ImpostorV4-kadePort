@@ -82,12 +82,7 @@ class Main extends Sprite
 		framerate = 60;
 		#end
 
-		#if cpp
-		initialState = Caching;
 		game = new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen);
-		#else
-		game = new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen);
-		#end
 		addChild(game);
 
 		var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";

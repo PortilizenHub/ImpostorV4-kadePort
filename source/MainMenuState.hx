@@ -30,7 +30,7 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['Story', 'Freeplay', 'Options', 'Discord'];
+	var optionShit:Array<String> = ['Story', 'Freeplay', 'Options'];
 	#else
 	var optionShit:Array<String> = ['story mode', 'freeplay'];
 	#end
@@ -55,6 +55,9 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -137,8 +140,6 @@ class MainMenuState extends MusicBeatState
 					testButton.setPosition(367.35, 389.9);
 				case 1:
 					testButton.setPosition(665.5, 389.9);
-				case 2:
-					testButton.setPosition(367.35, 523.3);
 				case 3:
 					testButton.setPosition(665.5, 523.3);
 			}
